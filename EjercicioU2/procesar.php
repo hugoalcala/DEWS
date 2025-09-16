@@ -1,7 +1,19 @@
 <?php
+session_start();
+print_r($_SESSION);
+$_SESSION['nombre'] = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : '';
 
 // print_r($_POST);
+?>
 
-echo isset($_POST['nombre'])  ? 'Hola ' . $_POST['nombre'] : 'nombre no definido ';
+<br/>    
+
+<?php
+$_SESSION['nombre'] = 
+(isset($_POST['nombre'])) ? 
+$_POST['nombre']: 
+$_SESSION['nombre']; 
+
+echo 'Hola'.$_SESSION['nombre'];
 
 ?>
