@@ -68,6 +68,24 @@ $precio = [21,33,10];
 $resultado = array_map(function($pro, $pre){
     return [$pro, $pre];
 }, $prodcutos, $precio);
-print_r($resultado)
+print_r($resultado);      
+
+array_walk($prodcutos,function(&$prod){
+    $prod[1]*=1.1;
+});
+
+print_r($prodcutos);
+
+
+
+$numeros=[1,4,3,5,7,0,8];
+function reductor($carry, $item){
+    return $carry + $item
+}
+$suma = array_reduce($numeros, 'reductos', 0);
+$s = 0;
+for ($i=0; $i <count($numeros) ; $i++) { 
+        $s+=$numeros[$i];
+}
 
 ?>
